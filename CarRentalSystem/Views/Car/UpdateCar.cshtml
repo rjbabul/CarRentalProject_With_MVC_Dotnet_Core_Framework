@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model CarCreate
+
+<div class="nav"></div>
+
+
+
+<div class="row container">
+    <div class="col-6" style="text-align:center auto;">
+        <img src="~/Image/bmw.jpg" asp-append-version="true" width="500" height="400" alt="My Image" />
+    </div>
+    <div class="col-6 card" style="padding:10px; box-shadow:2px;">
+        <h1 style="text-align:center; color:blue;">Update Car</h1>
+        <form method="post">
+
+            <div class="form-group">
+                <label for="CarName" style="font-weight:bold;">Car Name</label>
+                <input type="text" class="form-control" id="CarName" asp-for="CarName" placeholder="@Model.CarName">
+                <span asp-validation-for="CarName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="CarId" style="font-weight:bold;">Car Id</label>
+                <input type="text" class="form-control" id="CarId" asp-for="CarId" placeholder="@Model.CarId">
+                <span asp-validation-for="CarId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="CarModel" style="font-weight:bold;"> Car Model</label>
+                <input type="text" class="form-control" id="CarModel" asp-for="CarModel" placeholder="@Model.CarModel">
+                <span asp-validation-for="CarModel" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="CarPrice" style="font-weight:bold;">Car Price</label>
+                <input type="number" class="form-control" id="CarPrice" asp-for="CarPrice" placeholder="@Model.CarPrice">
+                <span asp-validation-for="CarPrice"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-check-label" for="CarDescription " style="font-weight:bold;">Description</label>
+                <input type="CarDescription" class="form-control" asp-for="CarDescription" id="CarDescription" placeholder="@Model.CarDescription">
+                <span asp-validation-for="CarDescription"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-check-label" for="CompanyName" style="font-weight:bold;">Company Name</label>
+                <input type="CompanyName" class="form-control" asp-for="CompanyName" id="CompanyName" placeholder="@Model.CompanyName">
+                <span asp-validation-for="CompanyName"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top:10px;">Update</button>
+        </form>
+
+    </div>
+</div>

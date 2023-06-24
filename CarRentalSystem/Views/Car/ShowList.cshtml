@@ -1,0 +1,77 @@
+﻿
+<div class="nav">
+</div>
+
+@model List<CarCreate>
+
+<div class="img-fluid " style="  padding-bottom: 40px; font-family:roboto;">
+
+    <h1 class="img-fluid" style="text-align: center; font-weight: bold; margin:50px;">
+        Car List
+    </h1>
+ 
+        <div class="card-container" style="margin:10px;">
+            @foreach (var item in Model)
+            {
+                <div class="row " style="margin:10px;">
+                    <div class="col  car-container">
+                        <div class="card" style="width: 18rem; margin:20px;">
+                            <img class="card-img-top" src="~/Image/bmw.jpg" asp-append-version="true" width="200" height="100" alt="My Image" />
+                            <div class="card-body">
+                                <p class="card-title" style="color:#19795F; font-family: Roboto; font-size: 30px;">@item.CarName</p>
+                                <table style="border:none;">
+                                    <tr>
+                                        <td style="color:blue;">Name </td>
+                                        <td style="color:gray;">@item.CarName</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="color:blue;">Id </td>
+                                        <td style="color:gray;">@item.CarId</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="color:blue;">Model </td>
+                                        <td style="color:gray;">@item.CarModel</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue;">Price </td>
+                                        <td style="color:gray;">@item.CarPrice</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue;">Description </td>
+                                        <td style="color:gray;">@item.CarDescription</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue;">CompanyName </td>
+                                        <td style="color:gray;">@item.CompanyName</td>
+                                    </tr>
+                                    <tr>
+                                    <td style="text-align:right;">
+                                        <form asp-action="UpdateCar" asp-route-id="@item.Id" method="get">
+                                            <input type="submit" value="Update" style="background-color:green; box-shadow:  0px 2px 3px ; margin-top:5px; " />
+                                        </form>
+                                    </td>
+                                        <td style="text-align:right;">
+                                            <form asp-action="DeleteCar" asp-route-id="@item.Id" method="post">
+                                            <input type="submit" value="Delete" style="background-color:yellow; box-shadow:  0px 2px 3px ; margin-top:5px; "/>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </table>
+                                 
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+        </div>
+
+    
+
+    
+</div>
+ 
+ 
